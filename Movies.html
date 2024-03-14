@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<link rel="stylesheet" href="/app.css">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<style>
+    *{box-sizing: border-box;}
+   
+body{background-color:black;}
+.grid{ display:flex; gap: 24px;width: 1280px;margin-right: auto; margin-left: auto;}
+.grid-item{  margin-bottom: 10px; width: 100%; height: 350px;background-color: gray; padding: 24px;border-radius: 10px;flex-wrap: wrap;}
+.grid-item:hover{ border-radius: 1px;transform: scale(1.1); transition: transform 0.1;}
+img{ width: 100%; height: 250px;margin-top: 0px;}
+
+.fa-sharp:hover{transition: opacity 0.5s ease}
+.fa-sharp{opacity: 0;}
+
+
+
+
+.pagination{ 
+    display: flex;
+    align-items: center;
+    background-color:black;
+    color:black;
+    padding: 10px 40px;
+    border-radius: 6px;
+    margin-top: 100px;
+}
+ul{ margin: 20px  30px;}
+ ul li{display: inline-block;
+    margin: 0 10px;
+    background-color: #ccc;
+    width: 40px;
+    height: 40px;
+text-align: center;
+font-size: 20px;
+line-height: 40px;
+cursor: pointer;}   
+.btn1, .btn2{display: inline-flex;
+align-items: center; font-size: 20px;
+font-weight: 500px;color:#383838;
+background-color:transparent;
+outline: none;
+border: none;
+cursor: pointer;
+background-position: 0 -40px;
+transition: backgroud-position: 0.5s;}
+
+
+ul li .active{color:#fff; background-image(#ff4568, #ff4568); background-repeat: no-repeat; 
+background-position: 0 0;}
+p{color: #fff;}
+
+
+
+footer{padding-bottom: 40px; bottom: 0; z-index: 5;background-color: rgb(61, 59, 59);width:100%; height: 20px; margin-bottom: 0px;padding-top: 0px; text-align: center; color: white; position: fixed;"}
+
+
+</style>
+
+
+
+
+
+
+
+
+
+
+<body>
+    
+    
+
+
+
+
+
+
+
+
+    <div class="grid">
+        <div  class="grid-item">
+            <img src="https://m.media-amazon.com/images/M/MV5BNzhlNTAyY2YtNWUyYi00YmE3LWE2OTctZDI2MmJkNmZiMmY0XkEyXkFqcGdeQXVyMTUzMTg2ODkz._V1_FMjpg_UX1000_.jpg" alt=""> 
+
+            <a href="/Movie-details.html" style="color: rgb(150, 16, 16);">Movie title1</a>
+            <i  class="fa-sharp fa-thin fa-circle-play"></i>
+
+          <br>
+            <p >score:5.5</p>
+
+        </div>
+        <div class="grid-item" >
+           
+        <img  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS-tIIeO8JBCVtaH_8nDmRlBKDma9-re4BHiVThPfOXp6H7uSJ2ORdGfPJhjPofiwCNVRI&usqp=CAU" alt="">
+        <a href="/Movie-details.html" style="color: rgb(150, 16, 16);">Movie title2</a>
+        <i  class="fa-sharp fa-thin fa-circle-play"></i>
+        <br>
+        
+        <p class="t1" >score:7.5</p>
+        </div>
+        <div class="grid-item">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSPVT0Iv7zOc0ynaGYJU1V7AEOfhM60vzrrwLLb2YYUmxDoJ5j7kbJn0-ouOty0YdmpE3k&usqp=CAU" alt="">
+            <a href="/Movie-details.html" style="color: rgb(150, 16, 16);">Movie title3</a>
+            <i  class="fa-sharp fa-thin fa-circle-play"></i>
+            
+            <br>
+            <p>score:8.5</p></div>
+            
+            <div class="grid-item">
+                <img src="https://static1.moviewebimages.com/wordpress/wp-content/uploads/movie/D1fqxRppbQZodx4iP2IZHs1qCw3ngL.jpg?q=50&fit=crop&w=480&dpr=1.5" alt="">
+                <a href="" style="color: rgb(150, 16, 16);">Movie title4</a>
+                <i  class="fa-sharp fa-thin fa-circle-play"></i>
+                <br>
+                <p>score:8.5</p>
+            </div>
+
+        </div>
+        
+        
+
+        
+        
+        
+        
+        
+
+
+
+  
+
+    <div class="pagination">
+        <button class="btn1" onclick="backBtn" >Pre</button>
+        <ul>
+            <li class="link" value="1" onelick="activeLink()">1</li>
+            <li class="link" value="2"onelick="activeLink()">2</li>
+            <li class="link" value="3"onelick="activeLink()">3</li>
+            <li class="link" value="4"onelick="activeLink()">4</li>
+            
+        </ul>
+        <button class="btn2" onclick="nextBtn">Next</button>
+    </div>
+</div>
+            
+    <script>
+        let link = document.getElementsByClassName("link");
+        let currentValue = 1;
+
+        function activeLink(){for(l of link){l.classList.remove("active");   } 
+        event.target.classList.add("active"); 
+        currentValue = Event.Target.value;   
+    }
+
+    function backBtn(){if(currentValue > 1) { for(l of link){ l.classlist.remove("active");} currentValue--;link[currentValue-1].classList.add("active");}}
+
+    function nextBtn(){if(currentValue < 4) { for(l of link){ l.classlist.remove("active");} currentValue++;link[currentValue-1].classList.add("active");}}
+
+
+
+    </script>
+    
+    
+    
+    
+
+
+</body>
+<footer><p >&copy;2024 CINEMA TREASURE</p></footer>
+
+</html>
